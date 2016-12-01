@@ -208,15 +208,21 @@ describe('', function() {
   describe('Account Login:', function() {
 
     beforeEach(function(done) {
-      new User({
-        'username': 'Phillip',
-        'password': 'Phillip'
-      }).save(function() {
-        done();
-      });
+      request(app)
+        .post('/signup')
+        .send({
+          'username': 'Phillip',
+          'password': 'Phillip' })
+        .end(done);
+      // new User({
+      //   'username': 'Phillip',
+      //   'password': 'Phillip'
+      // }).save(function() {
+      //   done();
+      // });
     });
 
-    xit('Logs in existing users', function(done) {
+    it('Logs in existing users', function(done) {
       request(app)
         .post('/login')
         .send({

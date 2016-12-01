@@ -15,9 +15,7 @@ db.userSchema.methods.hashPassword = function() {
   var cipher = Promise.promisify(bcrypt.hash);
   return cipher(this.password, null, null).bind(this)
     .then(function(hash) {
-      console.log('hash', hash);
       this.password = hash;
-      console.log('thispw', this.password);
       this.save(function(err) {
         if (err) {
           throw err;
