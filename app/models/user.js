@@ -6,7 +6,6 @@ var Promise = require('bluebird');
 db.userSchema.methods.comparePassword = function(attemptedPassword, callback) {
   var pw = this.password;
   bcrypt.compare(attemptedPassword, pw, function(err, isMatch) {
-    console.log('comparePasswords this.password', pw);
     callback(isMatch);
   });
 };
