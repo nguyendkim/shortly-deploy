@@ -3,6 +3,7 @@ module.exports = function(grunt) {
   grunt.initConfig({
     pkg: grunt.file.readJSON('package.json'),
     concat: {
+
     },
 
     mochaTest: {
@@ -76,8 +77,7 @@ module.exports = function(grunt) {
     'mochaTest'
   ]);
 
-  grunt.registerTask('build', [
-  ]);
+  grunt.registerTask('build', ['concat', 'uglify', 'eslint']);
 
   grunt.registerTask('upload', function(n) {
     if (grunt.option('prod')) {
@@ -87,7 +87,7 @@ module.exports = function(grunt) {
     }
   });
 
-  grunt.registerTask('deploy', [
+  grunt.registerTask('deploy', ['nodemon'
     // add your deploy tasks here
   ]);
 
