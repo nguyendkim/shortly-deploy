@@ -1,4 +1,5 @@
 var path = require('path');
+var mongoose = require('mongoose');
 // var knex = require('knex')({
 //   client: 'sqlite3',
 //   connection: {
@@ -7,7 +8,6 @@ var path = require('path');
 //   useNullAsDefault: true
 // });
 // var db = require('bookshelf')(knex);
-var mongoose = require('mongoose');
 mongoose.connect('mongodb://localhost/shortly-deploy');
 
 var Schema = mongoose.Schema;

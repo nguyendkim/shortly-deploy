@@ -216,7 +216,7 @@ describe('', function() {
       });
     });
 
-    it('Logs in existing users', function(done) {
+    xit('Logs in existing users', function(done) {
       request(app)
         .post('/login')
         .send({
