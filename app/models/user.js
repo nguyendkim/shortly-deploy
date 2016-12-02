@@ -19,6 +19,7 @@ db.userSchema.methods.hashPassword = function() {
         if (err) {
           throw err;
         }
+        // return this.password;
       });
     });
 };
